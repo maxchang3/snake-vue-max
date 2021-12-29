@@ -1,57 +1,65 @@
-body{
+body {
     margin: 0;
 }
-#app{
-    background-color:rgb(36, 36, 36);
+
+#app {
+    background-color: rgb(36, 36, 36);
     height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    --pixel-size:.7rem;
+    --pixel-size: .7rem;
     background-image: url('./gamemax3900.png');
     background-size: 35em;
-    background-position:center;
+    background-position: center;
     background-repeat: no-repeat;
 }
-.matrix{
+
+.matrix {
     margin-top: .3rem;
     margin-bottom: .5rem;
 }
-.line{
-    height:var( --pixel-size);
-    background-color:black;
+
+.line {
+    height: var(--pixel-size);
+    background-color: black;
 }
-.dot{
+
+.dot {
     width: var(--pixel-size);
     height: var(--pixel-size);
     display: inline-block;
     /* fix inline-block misplacement  */
-    vertical-align:top;
- 
-}
-.dot-active{
-    background-color:green;
-    color:green;
-    box-shadow: 0px 0px 10px rgba(106, 255, 106,0.5);
-}
-.button_area{
-    display:grid;
-    grid-template-columns: repeat(3,1fr);
+    vertical-align: top;
+
 }
 
-.button_area .button{
+.dot-active {
+    background-color: green;
+    color: green;
+    box-shadow: 0px 0px 10px rgba(106, 255, 106, 0.5);
+}
+
+.button_area {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.button_area .button {
     user-select: none;
     font-size: 2rem;
-    color:white;
+    color: white;
     text-align: center;
-    width: 76.5px; height: 65px;
+    width: 76.5px;
+    height: 65px;
     background: url('button.png') -91.5px -5px;
     cursor: pointer;
 }
 
 .button_area .button:active {
-    width: 76.5px; height: 65px;
+    width: 76.5px;
+    height: 65px;
     background: url('button.png') -5px -5px;
 }
