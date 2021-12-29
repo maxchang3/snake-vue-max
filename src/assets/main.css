@@ -63,3 +63,9 @@ body {
     height: 65px;
     background: url('button.png') -5px -5px;
 }
+
+.placeholder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

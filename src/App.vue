@@ -21,7 +21,7 @@
     <div class="placeholder"></div>
 
     <div class="button" @click="touch('a')">⬅</div>
-    <div class="placeholder"></div>
+    <div class="placeholder"><a href="https://github.com/MaxChang3/max-vue-snake"><img style="height:2rem" src="@/assets/github.svg" /></a></div>
     <div class="button" @click="touch('d')">➡</div>
 
     <div class="placeholder"></div>
