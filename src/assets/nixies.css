@@ -1,0 +1,56 @@
+.nixie{
+    display: flex;
+}
+
+.tiny-screen {
+    margin-top: 5.2rem;
+}
+
+.bg-nixie_0 {
+    width: 71px; height: 142px;
+    background: url('nixies.png') -2.2px -2.2px;
+}
+.bg-nixie_1 {
+    width: 71px; height: 142px;
+    background: url('nixies.png') -77px -2.2px;
+}
+
+.bg-nixie_2 {
+    width: 71px; height: 142px;
+    background: url('nixies.png') -152.4px -2.2px;
+}
+
+.bg-nixie_3 {
+    width: 71px; height: 142px;
+    background: url('nixies.png') -227.5px -2.2px;
+}
+
+.bg-nixie_4 {
+    width: 71px; height: 142px;
+    background: url('nixies.png') -2.2px -149px;
+}
+
+.bg-nixie_5 {
+    width: 71px; height: 142px;
+    background: url('nixies.png') -77px -149px;
+}
+
+.bg-nixie_6 {
+    width: 71px; height: 142px;
+    background: url('nixies.png') -152.4px -149px;
+}
+
+.bg-nixie_7 {
+    width: 71px; height: 142px;
+    background: url('nixies.png') -227.5px -149px;
+}
+
+.bg-nixie_8 {
+    width: 71px; height: 142px;
+    background: url('nixies.png') -302.6px -2.2px;
+}
+
+.bg-nixie_9 {
+    width: 71px; height: 142px;
+    background: url('nixies.png') -1430px -149px;
+}
