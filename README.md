@@ -17,8 +17,8 @@ yarn dev
 yarn build
 ```
 
-# Desgin
+# Design
 
-Most of the graphics are desgined by myself (sorry for my bad design), except the PCB pic in the bottom. You can view the psd file in the Release.
+Most of the graphics are designed by myself (sorry for my bad design), except the PCB pic in the bottom. You can view the psd file in the Release.
 
 The font of the nixie tube is [Oslo II](https://www.1001fonts.com/oslo-ii-font.html)
