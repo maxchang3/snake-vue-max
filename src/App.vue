@@ -32,7 +32,7 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue';
-import Matrix, { coordinate, matrix } from '@/utils/matrix';
+import Matrix, { matrix } from '@/utils/matrix';
 import { Snake } from '@/components/snake'; // for LinkedList use `@/components/snake_linked`
 import { tinyScreenAni,timeToStirng } from '@/components/tinyScreenAni';
 import '@/assets/main.css';
