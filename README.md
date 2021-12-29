@@ -1,11 +1,18 @@
-# Vue 3 + Typescript + Vite
+# max-vue-snake
+A retro snake game on TypeScript + Vue 3 + Vite come with a nixie-tube-like timer / scoreboard and fantasy console for my study.
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+I write the snake class use two ways: arrays(snake.ts) and linkedlist(snake_linked.ts & linkedList.ts).
 
-## Recommended IDE Setup
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+# Install & Usage
+```
+yarn install
+yarn dev
+yarn build
+```
 
-## Type Support For `.vue` Imports in TS
+# Desgin
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+Most of the graphics are desgined by myself, except the PCB pic in the bottom. You can view the psd file in the Release.
+
+The font of the nixie tube is [Oslo II](https://www.1001fonts.com/oslo-ii-font.html)
