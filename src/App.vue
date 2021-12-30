@@ -62,7 +62,7 @@ const status = {
 const { MAP, tinyScreen } = data
 
 const tiny:tinyScreenAni = new tinyScreenAni(tinyScreen as Matrix,()=>{
-data.scores = (timeToStirng(new Date().getHours()) + timeToStirng(new Date().getMinutes())).split('');
+  data.scores = (timeToStirng(new Date().getHours()) + timeToStirng(new Date().getMinutes())).split('');
 })
 
 const keyMaps = {
