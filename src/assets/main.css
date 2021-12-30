@@ -1,7 +1,9 @@
+html {
+    font-size:16px;
+}
 body {
     margin: 0;
 }
-
 #app {
     background-color: rgb(36, 36, 36);
     height: 100vh;
@@ -12,7 +14,7 @@ body {
     align-items: center;
     --pixel-size: .7rem;
     background-image: url('./gamemax3900.png');
-    background-size: 35em;
+    background-size: 35rem;
     background-position: center;
     background-repeat: no-repeat;
 }
