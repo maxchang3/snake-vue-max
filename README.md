@@ -1,6 +1,6 @@
-# max-vue-snake
+# Snake Vue Max
 
-A retro snake game on TypeScript + Vue 3 + Vite comes with a nixie-tube-like timer/scoreboard for my study.
+A retro snake game with a Nixie-tube-like timer/scoreboard, written in TypeScript + Vue 3 + Vite, made for learning purposes.
 
 I write the snake class using two ways: arrays(snake.ts) and LinkedList(snake_linked.ts & linkedList.ts).
 
