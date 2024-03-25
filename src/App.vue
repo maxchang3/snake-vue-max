@@ -90,7 +90,7 @@ const keyMaps = {
 }
 
 const touch = (key: string) => {
-  navigator.vibrate(80);
+  if(navigator.vibrate) navigator.vibrate(80);
   if (status.gaming == true) {
     keyMaps.inGame(undefined, key)
   } else if (status.starterReady == true) {
