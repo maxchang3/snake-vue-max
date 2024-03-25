@@ -1,42 +1,70 @@
 <template>
   <div class="nixie">
-    <div v-for="num in data.scores" :class="`bg-nixie_${num}`" ></div>
+    <div v-for="num in data.scores" :class="`bg-nixie_${num}`"></div>
     <div class="tiny-screen">
-      <div class="line" v-for="line,row in tinyScreen.value">
-        <div :class="`dot ${dot == 1 ? 'dot-active' : ''}`" v-for="dot,column in line">
+      <div class="line" v-for="line, row in tinyScreen.value">
+        <div :class="`dot ${dot == 1 ? 'dot-active' : ''}`" v-for="dot, column in line">
         </div>
       </div>
     </div>
   </div>
   <div class="matrix">
-    <div class="line" v-for="(line,row) in MAP.value">
-      <div :class="`dot ${dot == 1 ? 'dot-active' : ''}`" v-for="(dot,column) in line">
+    <div class="line" v-for="(line, row) in MAP.value">
+      <div :class="`dot ${dot == 1 ? 'dot-active' : ''}`" v-for="(dot, column) in line">
         <!-- @click="MAP.opposite(row, column)" -->
       </div>
     </div>
   </div>
-  <div class="button_area">
-    <div class="placeholder"></div>
-    <div class="button" @click="touch('w')">⬆</div>
-    <div class="placeholder"></div>
+  <div v-if="isIOS">
+    <div class="button_area">
+      <div class="placeholder"></div>
+      <div class="button" @touchstart="touch('w')">⬆</div>
+      <div class="placeholder"></div>
 
-    <div class="button" @click="touch('a')">⬅</div>
-    <div class="placeholder"><a href="https://github.com/MaxChang3/max-vue-snake"><img style="height:2rem" src="@/assets/github.svg" /></a></div>
-    <div class="button" @click="touch('d')">➡</div>
+      <div class="button" @touchstart="touch('a')">⬅</div>
+      <div class="placeholder"><a href="https://github.com/MaxChang3/max-vue-snake"><img style="height:2rem"
+            src="@/assets/github.svg" /></a>
+      </div>
+      <div class="button" @touchstart="touch('d')">➡</div>
 
-    <div class="placeholder"></div>
-    <div class="button" @click="touch('s')">⬇</div>
-    <div class="placeholder"></div>
+      <div class="placeholder"></div>
+      <div class="button" @touchstart="touch('s')">⬇</div>
+      <div class="placeholder"></div>
+    </div>
+  </div>
+  <div v-else>
+    <div class="button_area">
+      <div class="placeholder"></div>
+      <div class="button" @click="touch('w')">⬆</div>
+      <div class="placeholder"></div>
+
+      <div class="button" @click="touch('a')">⬅</div>
+      <div class="placeholder"><a href="https://github.com/MaxChang3/max-vue-snake"><img style="height:2rem"
+            src="@/assets/github.svg" /></a>
+      </div>
+      <div class="button" @click="touch('d')">➡</div>
+
+      <div class="placeholder"></div>
+      <div class="button" @click="touch('s')">⬇</div>
+      <div class="placeholder"></div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue';
-import Matrix, { matrix } from '@/utils/matrix';
-import { Snake } from '@/components/snake'; // for LinkedList use `@/components/snake_linked`
-import { tinyScreenAni,timeToStirng } from '@/components/tinyScreenAni';
-import '@/assets/main.css';
+import { reactive } from 'vue'
+import Matrix, { matrix } from '@/utils/matrix'
+import { Snake } from '@/components/snake' // for LinkedList use `@/components/snake_linked`
+import { tinyScreenAni, timeToStirng } from '@/components/tinyScreenAni'
+import '@/assets/main.css'
 import '@/assets/nixies.css'
+
+const checkIOS = () => {
+  let platform = navigator?.userAgent || navigator?.platform || 'unknown'
+  return /iPhone|iPod|iPad/.test(platform)
+}
+
+const isIOS = checkIOS()
 
 interface data {
   MAP: Matrix,
@@ -61,13 +89,13 @@ const status = {
 
 const { MAP, tinyScreen } = data
 
-const tiny:tinyScreenAni = new tinyScreenAni(tinyScreen as Matrix,()=>{
-  data.scores = (timeToStirng(new Date().getHours()) + timeToStirng(new Date().getMinutes())).split('');
+const tiny: tinyScreenAni = new tinyScreenAni(tinyScreen as Matrix, () => {
+  data.scores = (timeToStirng(new Date().getHours()) + timeToStirng(new Date().getMinutes())).split('')
 })
 
 const keyMaps = {
   async start() {
-    if (status.starter) return;
+    if (status.starter) return
     status.starter = true
     tiny.clearTimer()
     tinyScreen.lineByLine()
@@ -90,7 +118,7 @@ const keyMaps = {
 }
 
 const touch = (key: string) => {
-  if(navigator.vibrate) navigator.vibrate(80);
+  if (navigator.vibrate) navigator.vibrate(80)
   if (status.gaming == true) {
     keyMaps.inGame(undefined, key)
   } else if (status.starterReady == true) {
@@ -111,7 +139,7 @@ const newGame = () => {
   const Game = setInterval(() => {
     data.scores = setScores(_snake.snake.scores)
     const gameOver = _snake.move()
-    if (!(gameOver)) return;
+    if (!(gameOver)) return
     clearInterval(Game)
     MAP.readMap('gameover').then(async (map: matrix): Promise<void> => {
       window.onkeydown = () => { }
