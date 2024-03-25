@@ -12,9 +12,9 @@ https://snake.xiandai.ren/
 # Install & Usage
 
 ```
-yarn install
-yarn dev
-yarn build
+pnpm install
+pnpm dev
+pnpm build
 ```
 
 # Design
