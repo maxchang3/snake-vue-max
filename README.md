@@ -1,13 +1,10 @@
 # Snake Vue Max
 
-A retro snake game with a Nixie-tube-like timer/scoreboard, written in TypeScript + Vue 3 + Vite, made for learning purposes.
-
-I write the snake class using two ways: arrays(snake.ts) and LinkedList(snake_linked.ts & linkedList.ts).
+A retro snake game designed with a fantasy console interface and a Nixie tube-style scoreboard, built with TypeScript, Vue 3, and Vite as a learning project.
 
 # Preview
 
 https://snake.xiandai.ren/
-
 
 # Install & Usage
 
@@ -19,6 +16,4 @@ pnpm build
 
 # Design
 
-Most of the graphics are designed by myself (sorry for my bad design), except the PCB pic at the bottom. You can view the PSD file in the Release.
-
-The font of the nixie tube is [Oslo II](https://www.1001fonts.com/oslo-ii-font.html)
+Design: Most of the graphics in the game were designed by me(sorry for my bad design), except for the PCB picture at the bottom. You can find the PSD file in the Release. The font used for the [Nixie tube is Oslo II](https://www.1001fonts.com/oslo-ii-font.html).
